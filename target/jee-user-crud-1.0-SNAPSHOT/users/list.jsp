@@ -42,9 +42,6 @@
                 <span>Dashboard</span></a>
         </li>
 
-<%--        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">--%>
-
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -89,22 +86,6 @@
                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                 </div>
 
-                <!-- Content Row -->
-                <div class="row">
-
-                </div>
-
-                <!-- Content Row -->
-
-                <div class="row">
-
-                            <!-- Card Body -->
-                            <div class="card-body">
-                                <div class="chart-area">
-                                    <canvas id="myAreaChart"></canvas>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
