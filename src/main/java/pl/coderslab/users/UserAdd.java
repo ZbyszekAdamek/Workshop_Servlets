@@ -7,21 +7,23 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
 
-@WebServlet("/user/list")
-public class UserList extends HttpServlet {
+@WebServlet("/user/add")
+public class UserAdd extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UserDao userDao = new UserDao();
-        request.setAttribute("users", userDao.findAll());
-        getServletContext().getRequestDispatcher("/users/list.jsp")
+        getServletContext().getRequestDispatcher("/users/add.jsp")
                 .forward(request, response);
-
     }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        User userMyUser = new User();
+        userMyUser.setUserName(request.getParameter("userName"));
+        userMyUser.setEmail(request.getParameter("userEmail"));
+        userMyUser.setPassword(request.getParameter("userPassword"));
+        UserDao userDao = new UserDao();
+        userDao.create(userMyUser);
+        response.sendRedirect(request.getContextPath() + "/user/list");
     }
 }
